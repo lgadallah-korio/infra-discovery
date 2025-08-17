@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/crush-ai/agent/main/schema/crush.schema.json",
+  "name": "Infrastructure Discovery Crush Agent",
+  "description": "An AI agent for infrastructure exploration configured with Azure MCP support.",
+  "model": {
+    "provider": "anthropic",
+    "name": "claude-3-7-sonnet-20250219"
+  },
+  "mcp": {
+    "taskmaster": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}"
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
+    },
+    "azure": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@azure/mcp", "server", "start"],
+      "env": {
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
+    },
+    "kubernetes": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["mcp-server-kubernetes", "server", "start"],
+      "env": {
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
+    },
+    "mongodb": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "mongodb-mcp-server", 
+        "server", 
+        "start",
+        "-y", 
+        "cloud.mongodb.com/v2#/org/63497975ac303b406534f8f1",
+        "--apiClientId",
+        "${MONGODB_API_CLIENT_ID}"
+        "--apiClientSecret",
+        "${MONGODB_API_CLIENT_SECRET}"
+        "--readOnly"
+      ],
+      "env": {
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
+    },
+    "github": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/Users/lgadallah/projects/servers-archived/src/github/dist/index.js"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "atlassian": {
+      "type": "stdio",    
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.atlassian.com/v1/sse",
+        "51328",
+        "--debug"
+      ] 
+    }
+  }
+}
