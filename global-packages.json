@@ -1,0 +1,33 @@
+{
+  "name": "lib",
+  "dependencies": {
+    "@azure/mcp": {
+      "version": "0.5.5",
+      "overridden": false
+    },
+    "@floriscornel/teams-mcp": {
+      "version": "0.3.2",
+      "overridden": false
+    },
+    "mcp-remote": {
+      "version": "0.1.18",
+      "overridden": false
+    },
+    "mcp-server-kubernetes": {
+      "version": "2.8.0",
+      "overridden": false
+    },
+    "mongodb-mcp-server": {
+      "version": "0.2.0",
+      "overridden": false
+    },
+    "npm": {
+      "version": "11.5.1",
+      "overridden": false
+    },
+    "task-master-ai": {
+      "version": "0.24.0",
+      "overridden": false
+    }
+  }
+}
