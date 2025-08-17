@@ -44,13 +44,11 @@
         "start",
         "-y", 
         "cloud.mongodb.com/v2#/org/63497975ac303b406534f8f1",
-        "--apiClientId",
-        "${MONGODB_API_CLIENT_ID}",
-        "--apiClientSecret",
-        "${MONGODB_API_CLIENT_SECRET}",
         "--readOnly"
       ],
       "env": {
+        "MDB_MCP_API_CLIENT_ID": "${MONGODB_API_CLIENT_ID}",
+        "MDB_MCP_API_CLIENT_SECRET": "${MONGODB_API_CLIENT_SECRET}",
         "DEBUG": "*",
         "MCP_LOG_LEVEL": "debug"
       }
@@ -74,6 +72,15 @@
         "51328",
         "--debug"
       ] 
+    },
+    "teams": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@floriscornel/teams-mcp@latest"],
+      "env": {
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
     }
   }
 }
