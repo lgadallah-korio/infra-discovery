@@ -12,7 +12,7 @@
       "command": "npx",
       "args": ["-y", "--package=task-master-ai", "task-master-ai"],
       "env": {
-        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}"
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
         "DEBUG": "*",
         "MCP_LOG_LEVEL": "debug"
       }
@@ -45,9 +45,9 @@
         "-y", 
         "cloud.mongodb.com/v2#/org/63497975ac303b406534f8f1",
         "--apiClientId",
-        "${MONGODB_API_CLIENT_ID}"
+        "${MONGODB_API_CLIENT_ID}",
         "--apiClientSecret",
-        "${MONGODB_API_CLIENT_SECRET}"
+        "${MONGODB_API_CLIENT_SECRET}",
         "--readOnly"
       ],
       "env": {
@@ -59,7 +59,7 @@
       "type": "stdio",
       "command": "node",
       "args": [
-        "/Users/lgadallah/projects/servers-archived/src/github/dist/index.js"
+        "./servers-archived/src/github/dist/index.js"
       ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
