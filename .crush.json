@@ -63,6 +63,15 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       }
     },
+    "argocd-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["argocd-mcp", "server", "start"],
+      "env": {
+        "ARGOCD_BASE_URL": "${ARGOCD_BASE_URL}",
+        "ARGOCD_API_TOKEN": "${ARGOCD_API_TOKEN}"
+      }
+    },
     "atlassian": {
       "type": "stdio",    
       "command": "npx",
@@ -78,6 +87,18 @@
       "command": "npx",
       "args": ["-y", "@floriscornel/teams-mcp@latest"],
       "env": {
+        "DEBUG": "*",
+        "MCP_LOG_LEVEL": "debug"
+      }
+    },
+    "testrail": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@bun913/mcp-testrail@0.13.0"],
+      "env": {
+        "TESTRAIL_URL": "${TESTRAIL_URL}",
+        "TESTRAIL_USERNAME": "${TESTRAIL_USERNAME}",
+        "TESTRAIL_API_KEY": "${TESTRAIL_API_KEY}",
         "DEBUG": "*",
         "MCP_LOG_LEVEL": "debug"
       }

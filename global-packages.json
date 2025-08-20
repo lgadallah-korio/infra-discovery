@@ -5,8 +5,16 @@
       "version": "0.5.5",
       "overridden": false
     },
+    "mcp-testrail": {
+      "version": "0.13.0",
+      "overridden": false
+    },
     "@floriscornel/teams-mcp": {
       "version": "0.3.2",
+      "overridden": false
+    },
+    "argocd-mcp": {
+      "version": "0.3.0",
       "overridden": false
     },
     "mcp-remote": {
@@ -19,6 +27,10 @@
     },
     "mongodb-mcp-server": {
       "version": "0.2.0",
+      "overridden": false
+    },
+    "argocd-mcp": {
+      "version": "0.3.0",
       "overridden": false
     },
     "npm": {
