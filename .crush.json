@@ -55,11 +55,10 @@
     },
     "github": {
       "type": "stdio",
-      "command": "node",
-      "args": [
-        "./servers-archived/src/github/dist/index.js"
-      ],
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
       "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}",
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       }
     },
