@@ -26,3 +26,5 @@ node_modules/
 # tasks.json
 # tasks/ 
 .env
+terraform-infra/*
+terraform-infra/
